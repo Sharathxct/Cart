@@ -1,20 +1,21 @@
-import logo from './logo.svg';
+import Headers from './components/Headers';
+import Home from './components/Home';
+import CartDetails from './components/CartDetails';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/Header';
-import CardsDetails from './components/CardsDetails';
-import Cards from './components/Cards';
-import {Routes,Route} from "react-router-dom";
+import {Routes,Route} from "react-router-dom"
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-  <>
-   <Header />
-   <Routes>
-     <Route path='/' element={<Cards />} />
-     <Route path='/cart/:id' element={<CardsDetails />} />
-   </Routes>
-  </>
+    <>
+     <Headers />
+     <Routes>
+      <Route  path='/' element={<Home />}/>
+      <Route  path='/cart' element={<CartDetails />}/>
+     </Routes>
+     <Toaster />
+    </>
   );
 }
 
